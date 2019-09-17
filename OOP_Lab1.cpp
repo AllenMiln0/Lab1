@@ -14,6 +14,7 @@ class Number {
 int main()
 {
     cout << "Hello World!\n"; 
-	cout << "lalalal";
+
+	cout << endl;
 }
 
