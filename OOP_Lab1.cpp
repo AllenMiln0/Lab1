@@ -4,17 +4,23 @@
 
 #include "pch.h"
 #include <iostream>
+#include <locale.h>
 
 using namespace std;
 
 class Number {
+private:
+	int hundred;
+	int ten;
+	int one;
+public:
 
 };
 
 int main()
 {
-    cout << "Hello World!\n"; 
+	setlocale(LC_ALL, "rus");
 
-	cout << endl;
+	return 0;
 }
 
