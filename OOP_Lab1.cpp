@@ -19,9 +19,14 @@ private:
 public:
 	/* Конструктор */
 	Number() {
-		hundred = 1;
+		cout << "Конструктор" << endl;
+		hundred = 0;
 		ten = 0;
 		one = 0;
+	}
+
+	~Number() {
+		cout << "Деструктор" << endl;
 	}
 
 	void init(int a, int b, int c) {
@@ -46,6 +51,9 @@ public:
 		cout << "Сотни: " << hundred << endl;
 		cout << "Десятки: " << ten << endl;
 		cout << "Единицы: " << one << endl;
+		int sum;
+		sum = become_number();
+		cout << "Число " << sum << endl;
 	}
 
 	/* Перевод в число */
@@ -62,7 +70,13 @@ public:
 		c.hundred = b.hundred + hundred;
 		c.ten = b.ten + ten;
 		c.one = b.one + one;
-		return c;
+		if (c.hundred < 9) return c;
+		else {
+			c.hundred = 0;
+			c.ten = 0;
+			c.one = 0;
+			return c;
+		}
 
 	}
 };
@@ -75,9 +89,10 @@ int main()
 
 	one.init(2, 6, 3);
 	one.display();
-	
 	two.read();
+	two.display();
 	Number three = one + two;
+	cout << "Сумма: " << endl;
 	three.display();
 	
 	return 0;
